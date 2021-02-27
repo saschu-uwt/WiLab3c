@@ -1,0 +1,44 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+#map {
+  width: 100%;
+  height: 100%;
+}
+
+/* Add styles to the form container
+Specifically wanted to set the width to handle the additional fields that pop up */
+.form-container {
+  width: 300px;
+  padding: 10px;
+  background-color: white;
+}
+
+/* This makes the form expand when the owner interest == Yes
+See: https://codepen.io/memco/pen/BajpD for more on conditionally toggling visibility of form fields */
+.control:checked ~ .conditional,
+	#yes:checked ~ .conditional,
+	#option-2:checked ~ .conditional {
+		clip: auto;
+		height: auto;
+		margin: 0;
+		overflow:scroll;
+		position: relative;
+		width: auto;
+    height: 300px;
+	}
+.control:not(:checked) ~ .conditional,
+  #yes:not(:checked) ~ .conditional,
+	#option-2:not(:checked) ~ .conditional {
+			border: 0;
+			clip: rect(0 0 0 0);
+			height: 1px;
+			margin: -1px;
+			overflow: hidden;
+			padding: 0;
+			position: absolute;
+			width: 1px;
+		}
